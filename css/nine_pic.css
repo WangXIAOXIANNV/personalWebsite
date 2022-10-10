@@ -1,0 +1,71 @@
+body{
+   
+    background-color: to top,#dfe9f3,#fff;
+
+}
+.imgBox{
+    width: 1220px;
+    /* border: 1px solid red; */
+    margin: 10px auto;
+    height: 800px;
+}
+.imgBox ul{
+    position: relative;
+}
+.imgBox li{
+    width: 400px;
+    height: 260px;
+    position: relative;
+    float: left;
+    margin: 5px 10px 5px 0;
+    overflow: hidden;
+}
+.imgBox li img{
+    width: 100%;
+    height: 100%;
+    object-fit: center;
+    object-position: center;
+    transition: 0.25s ease-in;
+}
+.imgBox li p{
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.75);
+    position: absolute;
+    /* 默认移出可视范围 */
+    top: -120%;
+    left: 0;
+    font-size: 15px;
+    color: #aaa;
+    padding: 20px;
+    line-height: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.imgBox li:hover img{
+    transform:scale(1.1);
+}
+.imgBox li:nth-child(3){
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 400px;
+    height: 530px;
+    margin-right: 0;
+
+}
+.imgBox li:nth-child(8){
+    position: absolute;
+    right: 0;
+    top: 540px;
+    margin-right: 0;
+
+}
+.footer{
+    position: absolute;
+    bottom: -90px;
+    margin-top: 10px;
+}
+

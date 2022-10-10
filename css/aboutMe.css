@@ -1,0 +1,330 @@
+.header{
+    position: absolute;
+    top: 0;
+}
+.body_aboutMe{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(150deg,#d299c2,#fef9d7);
+    overflow: hidden;
+}
+.container{
+    height: 200px;
+    width: 200px;
+    position: relative;
+}
+.container .bubble{
+    height: 100%;
+    width: 100%;
+    /* 设置圆心的位置 和颜色的比例 */
+    background: radial-gradient(circle at 75% 30%,#fff 5px,#ff21c0 8%,
+    #5b5b5b 60%,#ff21c0 100%);
+    border-radius: 50%;
+    box-shadow: inset 0 0 20px #fff,
+    inset 10px 0 46px #eaf5fc,
+    inset 80px 0 60px #efcde6,
+    inset -20px -60px 100px #f9f6de,
+    inset 0px 50px 140px #f9f6de,
+    0 0 90px #fff;
+    animation: bubble 4s ease-in-out infinite;
+}
+.shadow{
+    background-color: rgba(0,0,0,0.5);
+    width: 150px;
+    height: 40px;
+    border-radius: 50%;
+    position: absolute;
+    left: 50%;
+    margin-left: -75px;
+    bottom: -100px;
+    filter: blur(1px);
+    animation: shadow 4s ease-in-out infinite;
+}
+
+@keyframes bubble{
+    0%,100%{
+        transform: translateY(0);
+    }
+    50%{
+        transform: translateY(-80px);
+    }
+    
+}
+@keyframes shadow {
+        
+    0%,100%{
+        transform: scale(0.5);
+    }
+    50%{
+        transform: scale(1);
+    }
+}
+.aboutMe{
+    width:400px;
+    height: 500px;
+    font-family: 'icomoon';
+    position: absolute;
+    top: 200px;
+    left: 400px;
+    background-color: #fff;
+    transform-style: preserve-3d;
+    transform: perspective(1000px);
+    box-shadow: 10px 20px 40px rgba(0,0,0,0.25);
+    transition: 1s;
+}
+.aboutMe:hover{
+    transform: translateX(30%);
+}
+.aboutMe .imgBox{
+    position: relative;
+    width: 500px;
+    height: 500px;
+    z-index: 2;
+    transform-origin: left;
+    transform-style: preserve-3d;
+    background-color: #000;
+    transition: 1s;
+    box-shadow: 10px 20px 40px rgba(0,0,0,0.25);
+}
+.aboutMe:hover .imgBox{
+    transform: rotateY(-180deg);
+}
+.aboutMe .imgBox img{
+    position: absolute;
+    top:0;
+    left: 0;
+    width: 500px;
+    height: auto;
+    object-fit: cover;
+    transform-style: preserve-3d;
+    backface-visibility: hidden;
+    
+}
+.aboutMe .imgBox img:nth-child(2){
+    transform: rotateY(180deg);
+}
+
+
+.aboutMe .details{
+    position: absolute;
+    top: 0px;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    line-height: 1;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    /* padding: 20px; */
+    /* display: flex;
+    justify-content: center;
+    align-items: center; */
+}
+
+.aboutMe .details h1{
+    font-size: 40px;
+    /* background-color: pink; */
+    text-align: center;
+    margin: 30px 0 0px;
+    
+}
+.aboutMe .details .content{
+    font-size: 18px;
+    color: #333;
+    /* background-color: orange; */
+    line-height: 1;
+    display: flex;
+    flex-direction: column;
+    flex:1;
+    padding: 30px;;
+
+    
+}
+.aboutMe .details .content p{
+    width: 100%;
+    height: 50px;
+    line-height: 50px;
+    
+    /* justify-content: center; */
+}
+.aboutMe .details .content p span{
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    /* border: 1px solid red; */
+    /* border-radius: 50%; */
+    text-align: center;
+    /* background-color: #efcde6; */
+    margin: 5px;
+    font-size: 30px;
+}
+.aboutMe .details .content p:nth-child(1) span{
+    color: #fc6e51;
+}
+.aboutMe .details .content p:nth-child(2) span{
+    color: #a1fc51;
+}
+.aboutMe .details .content p:nth-child(3) span{
+    color: #51acfc;;
+}
+.aboutMe .details .content p:nth-child(4) span{
+    color: #da51fc;;
+}
+.aboutMe .details .content p:nth-child(5) span{
+    color: #92e4d6;;
+}
+.aboutMe .details .content p:nth-child(6) span{
+    color: #f4ad9f;;
+}
+
+.info{
+    position: absolute;
+    right: 50px;
+    bottom: 50%;
+    transform: translateY(45%);
+    width: 100vw;
+    max-width: 850px;
+    height: 450px;
+    background-color: #fff;
+    border-radius: 25px;
+    box-shadow: 0 10px 50px rgba(0,0,0,0.3);
+}
+.info .card{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 450px;
+    padding-left: 30px;
+    position: absolute;
+    /* overflow: hidden; */
+}
+.info .card .img{
+    width: 420px;
+    height: 310px;
+    border: 10px solid #ddd;
+    border-radius: 20px;
+    overflow: hidden;
+    /* 防止被挤压 */
+    flex-shrink:0;
+    /* position: absolute; */
+    
+    box-shadow: 0 10px 50px rgba(0,0,0,0.4);
+
+}
+.info .card .img img{
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: 0.6s;
+    object-fit: cover;
+    object-position: center;
+    
+    box-sizing: content-box;
+} 
+
+.info #slide_1:checked ~ .card-1 img{
+    opacity: 1;
+    transition-delay: 0.2s ;
+}
+.info #slide_2:checked ~ .card-2 img{
+    opacity: 1;
+    transition-delay: 0.2s ;
+}
+.info #slide_3:checked  ~ .card-3 img{
+    opacity: 1;
+    transition-delay: 0.2s ;
+}
+.info .card .section{
+    flex: 0.9;
+    padding: 0 5px 0 35px;
+    left: 50px;
+    opacity: 0;
+    transition: 0.6s;
+    /* background-color: pink; */
+}
+/* 通过单选框的checked 来显示指定文本内容 */
+.info #slide_1:checked ~ .card-1 .section,
+.info #slide_2:checked ~ .card-2 .section,
+.info #slide_3:checked ~ .card-3 .section{
+    opacity: 1;
+    left: 0;
+    transition-delay: 0.3s;
+}
+.info .card h3{
+    font-size: 30px;
+    font-weight: 700px;
+    margin-bottom: 20px;
+}
+.info .card .text{
+    font-size: 17px;
+    color: #555;
+    text-align: justify;
+    margin-bottom: 25px;
+    margin-right: 10px;
+
+} 
+.info .card a{
+    padding: 13px 20px;
+    background-color: #000;
+    color: #fff;
+    border-radius: 50px;
+    letter-spacing: 1px;
+    font-weight: 600;
+    box-shadow: 0 10px 50px rgba(0,0,0,0.2);
+    /* float: right; */
+    position: absolute;
+    right: 50px;
+    bottom: 35px;
+}
+.info .card > h3 > b{
+    font-weight: 600;
+    display: block;
+    font-size: 20px;
+    
+}
+.info .slider{
+    position: absolute;
+    bottom: 25px;
+    /* border: 1px solid red; */
+    right: 20px;
+    /* transform: translate(-50%); */
+    z-index: 1;
+}
+.info .slider .slide{
+    width: 50px;
+    height: 10px;
+    background-color: #dfdfdf;
+    display: inline-flex;
+    margin: 0 30px;
+    border-radius: 5px;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+.info .slider .slide::before{
+    content: "";
+    width: 0%;
+    height: 100%;
+    background-color: #000;
+    border-radius: 5px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: 0.6s;
+}
+/* 通过单选框的checked来显示指定指示器的黑色进度条 */
+.info #slide_1:checked ~ .slider .slide_1::before,
+.info #slide_2:checked ~ .slider .slide_2::before,
+.info #slide_3:checked ~ .slider .slide_3::before{
+    width: 100%;
+    transform: scaleX(1);
+}
+.footer{
+    position: absolute;
+    bottom:0;
+    left: 0;
+}

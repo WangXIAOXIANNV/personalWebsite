@@ -1,0 +1,315 @@
+.body{
+    background-image: linear-gradient(to bottom right, #bdc3c7,#2c3e50) ;
+}
+.autoPlay_box{
+    width: 1400px;
+    height: 520px;
+    background-color: pink;
+    position: relative;
+    margin: 20px auto;
+    
+    
+}
+.autoPlay_box .imgs{
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+}
+.autoPlay_box .imgs img{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    object-fit: cover;
+    object-position: center;
+}
+.autoPlay_box .imgs a{
+    opacity: 0;
+    transition: .2s;
+}
+.autoPlay_box .imgs a.active{
+    opacity: 1;
+}
+
+/* 容器四周的渐变黑 */
+.autoPlay_box .shades{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    /* 元素不对指针事件做出反应 */
+}
+.autoPlay_box .shades .left{
+    width: 160px;
+    height: 100%;
+    background: linear-gradient(to left,transparent,#16161a);
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.autoPlay_box .shades > .right{
+    width: 160px;
+    height: 100%;
+    background: linear-gradient(to right,transparent,#16161a);
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+.autoPlay_box .shades > .top{
+    width: 100%;
+    height: 90px;
+    background: linear-gradient(to top,transparent,#16161a);
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.autoPlay_box .shades > .bottom{
+    width: 100%;
+    height: 220px;
+    background: linear-gradient(to bottom,transparent,#16161a);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+.autoPlay_box .titles{
+    width: 297px;
+    height: 416px;
+    background: linear-gradient(to bottom,transparent,#16161a);
+    position: absolute;
+    top: 19%;
+    right: 5%;
+    background: linear-gradient(to bottom,transparent,#16161a 22%,#16161a 81%,transparent);
+}
+.autoPlay_box > .titles a{
+    font-size: 14px;
+    display: block;
+    color: rgba(255, 255, 255, .6);
+    /* text-decoration: none; */
+    width: 100%;
+    padding: 12px 20px;
+}
+
+.autoPlay_box > .titles .title2{
+    font-size: 16px;
+    margin-top: 8px;
+    display: none;
+}
+.autoPlay_box > .titles a.active{
+    color: #fff;
+    font-size: 22px;
+    font-weight: bold;
+    background: linear-gradient(to right,rgba(255, 255, 255, .25) 22%,transparent 90%);
+}
+.autoPlay_box > .titles a.active .title2{
+    display: block;
+}
+.bindPage .filter{
+    /* background-color: pink; */
+    height: 50px;
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 50px;
+}
+
+.bindPage .filter>p{
+    font-size: 30px;
+    width: 100px;
+    height: 40px;
+    padding: 5px 20px;
+    margin: 0 10px;
+    background: linear-gradient(to right, #03a9f4, #f441a5, #ffeb3b, #09a8f4);
+    background-size: 400%;
+    border-radius: 50px;
+    cursor: pointer;
+    text-align: center;
+    line-height: 40px;
+    color: #fff;
+    z-index: 1;
+    position: relative;
+}
+.bindPage .filter>p::before{
+    content: "";
+    position: absolute;
+    top: -5px;
+    bottom: -5px;
+    left: -5px;
+    right: -5px;
+    background: linear-gradient(to right, #03a9f4, #f441a5, #ffeb3b, #09a8f4);
+    background-size: 400%;
+    border-radius: 50px;
+    z-index: -1;
+    filter: blur(20px);
+
+}
+
+.bindPage .filter>p:hover{
+    animation: streamer 8s infinite;
+}
+.bindPage .filter>p:hover::before{
+    animation: streamer 8s infinite;
+
+}
+@keyframes streamer {
+    100%{
+        background-position: -400% 0;
+    }
+    
+}
+.bindPage .filter>p.disable{
+    cursor: not-allowed;
+}
+.bindPage .filter>select{
+    padding: 5px 20px;
+    font-size: 20px;
+    border: 3px solid #fff;
+    border-radius: 10px;
+    width: 140px;
+    height: 55px;
+    text-align: center;
+    line-height: 55px;
+    margin-left: 30px;
+    background-color: #00c6f6;
+    font-weight: bold;
+    color: #fff;
+    cursor: pointer;
+    position: relative;
+    outline: none;
+    /* box-shadow: 5px 5px 5px #00fff0; */
+}
+
+
+.bindPage .filter>select option{
+    background-color: #fff;
+    color: #000;
+}
+.bindPage .hobby{
+    width: 90%;
+    font-family: 'icomoon';
+}
+.bindPage .hobby ul{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    
+}
+.bindPage .hobby ul li{
+    width: 400px;
+    height: 300px;
+
+    margin-bottom: 10px;
+}
+.bindPage .hobby .sample{
+    position: relative;
+    overflow: hidden;
+    min-width: 300px;
+    max-width: 640px;
+    max-height: 500px;
+    color: #000;
+    text-align: right;
+    font-size: 16px;
+
+}
+.bindPage .hobby ul li img{
+    max-width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    object-fit: cover;
+    object-position: center;
+}
+.bindPage .hobby .sample .text{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 1;
+    opacity: 1;
+    padding: 30px 0 30px 10px;
+    background-color: #fff;
+    width: 40%;
+    transform: translateX(100%);
+}
+.bindPage .hobby .sample::after{
+    content: "";
+    position: absolute;
+    bottom: -17%;
+    right: 30%;
+    transform: translateY(-50%);
+    /* 纯css书写箭头朝下的三角形 */
+    width: 0;
+    height: 0;
+    border: 185px solid transparent;
+    border-top: 185px solid rgba(255,255,255,0.5);
+    transition: all 0.35s ease;
+
+
+}
+
+.bindPage .hobby .sample .text::before{
+    content: "";
+    position: absolute;
+    top:50%;
+    transform: translateY(-50%);
+    right: 100%;
+    /* 纯css书写箭头朝左的三角形 */
+    width: 0;
+    height: 0;
+    border: 150px solid transparent;
+    border-right: 150px solid #fff;
+
+}
+.bindPage .hobby .sample h3,
+.bindPage .hobby .sample p{
+    line-height: 1.5em;
+    transform: translateX(-20px);
+    text-align: right;
+
+}
+.bindPage .hobby .sample h3{
+    margin: 0 0 15px;
+    font-weight: 900;
+    font-size: 30px;
+    opacity: 0.75;
+
+}
+
+.bindPage .hobby .sample .text span{
+    display: block;
+    position: absolute;
+    bottom: 38px;
+    left: -230px;
+    padding: 20px 30px;
+    font-size: 44px;
+    color: #fff;
+    opacity: 0;
+}
+.bindPage .hobby .sample a{
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 1;
+}
+.bindPage .hobby .sample:hover img,
+.bindPage .hobby .sample.hover img{
+    zoom:1;
+    filter: alpha(opacity = 50);
+    opacity: 0.5;
+
+}
+.bindPage .hobby .sample:hover::after,
+.bindPage .hobby .sample.hover::after,
+.bindPage .hobby .sample:hover .text,
+.bindPage .hobby .sample.hover .text,
+.bindPage .hobby .sample:hover span,
+.bindPage .hobby .sample.hover span{
+    transform: translateX(0);
+    opacity: 1;
+
+}
+

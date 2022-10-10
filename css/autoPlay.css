@@ -1,0 +1,115 @@
+body{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f4f4f4;
+
+}
+.container{
+    position: relative;
+    width: 1200px;
+    height: 450px;
+    overflow: hidden;
+
+}
+.container .imgs{
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+/* object-fit 属性指定元素的内容应该如何去适应指定容器的高度与宽度。
+cover 保持原有尺寸比例。但部分内容可能被剪切
+*/
+.container .imgs img{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    object-fit: cover;
+    object-position: center;
+/* 图片正中间显示 */
+}
+.container .imgs a{
+    opacity: 0;
+    transition: .2s;
+}
+.container .imgs a.active{
+    opacity: 1;
+}
+
+
+/* 容器四周的渐变黑 */
+.shades{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    /* 元素不对指针事件做出反应 */
+}
+.shades .left{
+    width: 160px;
+    height: 100%;
+    background: linear-gradient(to left,transparent,#16161a);
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.shades > .right{
+    width: 160px;
+    height: 100%;
+    background: linear-gradient(to right,transparent,#16161a);
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+.shades > .top{
+    width: 100%;
+    height: 90px;
+    background: linear-gradient(to top,transparent,#16161a);
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.shades > .bottom{
+    width: 100%;
+    height: 220px;
+    background: linear-gradient(to bottom,transparent,#16161a);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+.container .titles{
+    width: 297px;
+    height: 416px;
+    background: linear-gradient(to bottom,transparent,#16161a);
+    position: absolute;
+    top: 19%;
+    right: 5%;
+    background: linear-gradient(to bottom,transparent,#16161a 22%,#16161a 81%,transparent);
+}
+.container > .titles a{
+    display: block;
+    color: rgba(255, 255, 255, .6);
+    /* text-decoration: none; */
+    width: 100%;
+    padding: 12px 20px;
+}
+
+.container > .titles .title2{
+    font-size: 12px;
+    margin-top: 8px;
+    display: none;
+}
+.container > .titles a.active{
+    color: #fff;
+    font-size: 20px;
+    font-weight: bold;
+    background: linear-gradient(to right,rgba(255, 255, 255, .25) 22%,transparent 90%);
+}
+.container > .titles a.active .title2{
+    display: block;
+}
+
+

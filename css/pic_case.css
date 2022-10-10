@@ -1,0 +1,216 @@
+@font-face {
+    font-family: 'icomoon';
+    src:  url('../fonts/icomoon.eot?cs1okd');
+    src:  url('../fonts/icomoon.eot?cs1okd#iefix') format('embedded-opentype'),
+      url('../fonts/icomoon.ttf?cs1okd') format('truetype'),
+      url('../fonts/icomoon.woff?cs1okd') format('woff'),
+      url('../fonts/icomoon.svg?cs1okd#icomoon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: block;
+  }
+
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+img{
+    vertical-align: top;
+}
+em,i{
+    font-style: normal;
+}
+ul,ol li{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+}
+img{
+    vertical-align: middle;
+    border: 0;
+}
+body{
+    
+    width: 100%vw;
+    /* display: flex;
+    justify-content: center;
+    align-items: center; */
+
+    background: radial-gradient(circle at top center,#718497,#29323c);
+}
+.container{
+    display: flex;
+    width: 90vw;
+    /* border: 1px solid red; */
+    max-width: 1000px;
+    height: 400px;
+    overflow: hidden;
+    margin: 80px auto;
+}
+.container .item{
+    position: relative;
+    width: 60px;
+    margin: 10px;
+    cursor: pointer;
+    overflow: hidden;
+    border-radius: 30px;
+    /* 保持原有尺寸比例 */
+    background-size: cover;
+    /* 定位背景图为正中间 */
+    background-position: center;
+    transition: .5s cubic-bezier(0.075, 0.82, 0.165, 1);
+
+}
+.container .item .shadow{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100px;
+    /* background-color: pink; */
+    transition: 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+
+}
+.container .item .content{
+    display: flex;
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    right: 0;
+    height: 40px;
+    /* background-color: purple; */
+    transition: 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+
+}
+.container .item .content .icon{
+    min-width: 40px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #fff;
+    /* display: flex;
+    justify-content: center;
+    align-items: center; */
+    text-align: center;
+    line-height: 40px;
+    font-size: 25px;
+    font-family: 'icomoon';
+}
+.container .item:nth-child(1) .fa{
+    color: #fc6e51;
+    /* font-size: 30px; */
+}
+.container .item:nth-child(2) .fa{
+    color: #ffce54;
+}
+.container .item:nth-child(3) .fa{
+    color: #2ecc71;
+}
+.container .item:nth-child(4) .fa{
+    color: #ac92ec;
+}
+.container .item:nth-child(5) .fa{
+    color: #12afed;
+}
+.container .item .text{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 10px;
+    color: #fff;
+    width: 100%;
+}
+.container .item .text div{
+    /* 超出显示省略号 所以要设置宽度 */
+    width: calc(100% - 70px);
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    transition: opacity 0.5s ease-out;
+    overflow: hidden;
+    opacity: 0;
+
+}
+.container .item .text .tit{
+    font-weight: bold;
+    font-size: 18px;
+}
+.container .item .text .sub{
+    transition-delay: 0.1s;
+}
+/* 选中样式 */
+.container .item.active{
+    flex:1;
+    margin: 0;
+    border-radius: 40px;
+}
+.container .item.active .shadow{
+    background: linear-gradient(to top,rgba(0,0,0,0.35) 65%,transparent);
+    /* overflow: hidden; */
+}
+.container .item.active .content{
+    bottom: 20px;
+    left: 20px;
+}
+.container .item.active .content .text div{
+    opacity: 1;
+}
+
+.selectBox{
+    width: 100vw;
+    height: 450px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 30px;
+}
+.selectBox>.selectCard{
+    width: 600px;
+    height: 450px;
+    /* background-color: pink; */
+    display: flex;
+    flex-direction: column;
+}
+.selectBox>.selectCard ul{
+    height: 80px;
+    display: flex;
+}
+.selectBox>.selectCard ul li{
+    flex:1;
+    color: #fff;
+    font-size: 34px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    border-radius: 50px;
+    transition: 0.5s;
+}
+.selectBox>.selectCard ul li.active{
+    background-color: rgb(155, 153, 224);
+}
+.selectBox>.selectCard ol{
+    flex:1;
+    position: relative;
+}
+.selectBox>.selectCard ol li{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top:0;
+    left: 0;
+    /* 溢出隐藏 由于定位之后脱离文档流 后来者居上 */
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+.selectBox>.selectCard ol li img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+.selectBox>.selectCard ol li.active{
+    display: flex;
+}

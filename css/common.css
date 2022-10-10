@@ -1,0 +1,161 @@
+.center{
+    width: 1400px;
+    margin: 0 auto;
+    /* background-color: pink; */
+    display: flex;
+}
+
+.header{
+    width: 100vw;
+    height: 100px;
+    background-color: rgba(44, 44, 44, 0.8);
+    /*  */
+}
+.header img{
+    width: 80px;
+    height: auto;
+    
+}
+/* 导航栏 */
+
+
+.header .nav{
+    position: relative;
+    width: 420px;
+    height: 70px;
+    margin: auto 300px;
+
+}
+.header .nav>ul{
+    display: flex;
+    
+    
+}
+.header .nav>ul>li{
+    width: 70px;
+    height: 70px;
+    position: relative;
+    z-index:1;
+    /* margin-right: 35px; */
+}
+.header .nav>ul>li>a{
+    font-family: 'icomoon';
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: #fff;
+    text-align: center;
+    width: 70px;
+    height: 70px;
+}
+.header .nav>ul>li>a>.icon{
+    line-height: 70px;
+    font-size: 30px;
+    transition: all .5s;
+    
+}
+.header .nav>ul>li>a>.text{
+    position: absolute;
+    bottom: 13px;
+    font-size: 12px;
+    transition: .5s;
+    transform: scale(0);
+    /* 默认隐藏 */
+}
+.header .nav>ul>li> a:hover .icon{
+    font-size: 23px;
+    /* 图标上移 */
+    transform: translateY(-10px);
+}
+.header .nav>ul>li > a:hover .text{
+    /* 选中，文字显示 */
+    transform: scale(1);
+}
+.header .nav .active-bg{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background-color: var(--c);
+    box-shadow: 0 10px 15px var(--sc);
+    transition: .5s;
+}
+/* e1 ~ e2表示兄弟选择器:e1与e2必须有相同的父级，选择出现在e1后面的e2 */
+.nav>ul>li:nth-child(1):hover ~ .active-bg{
+    --c:#ffa502;
+    --sc:#ffa50299;
+    left: 0;
+
+}
+.nav>ul>li:nth-child(2):hover ~ .active-bg{
+    --c:#ff6348;
+    --sc:#ff634899;
+    left: calc(1*70px);
+
+}
+.nav>ul>li:nth-child(3):hover ~ .active-bg{
+    --c:#2ed573;
+    --sc:#2ed57399;
+    left: calc(2*70px);
+
+}
+.nav>ul>li:nth-child(4):hover ~ .active-bg{
+    --c:#1e90ff;
+    --sc:#1e90ff99;
+    left: calc(3*70px);
+
+}
+.nav>ul>li:nth-child(5):hover ~ .active-bg{
+    --c:#a51eff;
+    --sc:#a51eff99;
+    left: calc(4*70px);
+
+}
+.nav>ul>li:nth-child(6):hover ~ .active-bg{
+    --c:#ff0267;
+    --sc:#ff026799;
+    left: calc(5*70px);
+
+}
+
+.header .icons{
+    width: 200px;
+    flex:1;
+    /* background-color: antiquewhite; */
+    font-family: 'icomoon';
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+.header .icons a{
+    display: block;
+    width: 35px;
+    height: 35px;
+    background-color: #333;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 5px;
+    font-size: 20px;
+    transition: .2s;
+}
+.header .icons a:hover {
+    background: #e75806;
+}
+.footer{
+    width: 100vw;
+    height: 100px;
+    background-color: rgba(44, 44, 44, 0.8);
+    
+    text-align: center;
+    padding-top: 30px;
+    box-sizing: border-box;
+    font-size: 20px;
+    
+}
